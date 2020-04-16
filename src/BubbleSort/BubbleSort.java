@@ -3,9 +3,9 @@ package BubbleSort;
 import java.util.Scanner;
 
 public class BubbleSort {
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
-    public void sort(int[] array) {
+    public static void sort(int[] array) {
         System.out.println("press 1 to sort the array in ascending order");
         System.out.println("press 2 to sort the array in desending order");
         int choice = sc.nextInt();
@@ -21,7 +21,7 @@ public class BubbleSort {
         }
     }
 
-    private void desendingSort(int[] array, int j) {
+    private static void desendingSort(int[] array, int j) {
         if (array[j] < array[j + 1]) {
             int temp = array[j];
             array[j] = array[j + 1];
@@ -29,7 +29,7 @@ public class BubbleSort {
         }
     }
 
-    private void ascendingSort(int[] array, int j) {
+    private static void ascendingSort(int[] array, int j) {
         if (array[j] > array[j + 1]) {
             int temp = array[j];
             array[j] = array[j + 1];
