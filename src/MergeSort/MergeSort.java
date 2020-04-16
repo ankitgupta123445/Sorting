@@ -2,14 +2,16 @@ package MergeSort;
 
 public class MergeSort {
     public static void sort(int[] array) {
-        int half = array.length / 2;
-        int[] leftArray = new int[half];
-        int[] rightArray = new int[array.length - half];
-        System.arraycopy(array, 0, leftArray, 0, half);
-        System.arraycopy(array, half, rightArray, 0, array.length - half);
-        sort(leftArray);
-        sort(rightArray);
-        merge(array, leftArray, rightArray);
+        if (array.length > 1) {
+            int half = array.length / 2;
+            int[] leftArray = new int[half];
+            int[] rightArray = new int[array.length - half];
+            System.arraycopy(array, 0, leftArray, 0, half);
+            System.arraycopy(array, half, rightArray, 0, array.length - half);
+            sort(leftArray);
+            sort(rightArray);
+            merge(array, leftArray, rightArray);
+        }
     }
 
     private static void merge(int[] array, int[] leftArray, int[] rightArray) {
